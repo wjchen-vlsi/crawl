@@ -28,6 +28,7 @@ explorer.generation_order = {
                 "Tar:1", "Tar:2", "Tar:3", "Tar:4", "Tar:5", "Tar:6", "Tar:7",
                 "Coc:1", "Coc:2", "Coc:3", "Coc:4", "Coc:5", "Coc:6", "Coc:7",
                 "Dis:1", "Dis:2", "Dis:3", "Dis:4", "Dis:5", "Dis:6", "Dis:7",
+                "Geh:1", "Geh:2", "Geh:3", "Geh:4", "Geh:5", "Geh:6", "Geh:7",
             }
 -- generation order continues: pan, zig. However, these are really only in the
 -- official generation order so that entering them forces the rest of the
