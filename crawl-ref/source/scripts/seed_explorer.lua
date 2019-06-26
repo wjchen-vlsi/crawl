@@ -150,8 +150,19 @@ if args["-show"] ~= nil then
     if #levels_to_show == 0 then
         usage_error("\nNo valid levels or depths provided with -show!")
     end
-    util.sort(levels_to_show)
-    if max_depth == nil then max_depth = levels_to_show[#levels_to_show] end
+    if max_depth == nil then
+        -- this doesn't handle portal-only lists correctly
+        max_depth = 0
+        for i, depth in ipairs(levels_to_show) do
+            if depth > max_depth then max_depth = depth end
+        end
+        if max_depth == 0 then
+            -- portals only.
+            -- TODO: this is a heuristic; but no portals currently generate
+            -- later than this. (In fact, elf:2 is really the latest.)
+            max_depth = explorer.level_to_gendepth("Zot:4")
+        end
+    end
     local levels_set = util.set(levels_to_show)
     show_level_fun = function (l) return levels_set[l] end
 end
